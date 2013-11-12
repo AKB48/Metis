@@ -1,0 +1,2105 @@
+diff --git a/.project b/.project
+index 510a071..eee069d 100644
+--- a/.project
++++ b/.project
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>SlidingMenuDemo</name>
++	<name>Metis</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+diff --git a/bin/AndroidManifest.xml b/bin/AndroidManifest.xml
+new file mode 100644
+index 0000000..a8908ca
+--- /dev/null
++++ b/bin/AndroidManifest.xml
+@@ -0,0 +1,110 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.example.slidingmenudemo"
++    android:versionCode="1"
++    android:versionName="1.0" >
++
++    <uses-sdk
++        android:minSdkVersion="8"
++        android:targetSdkVersion="17" />
++
++    <application
++        android:allowBackup="true"
++        android:icon="@drawable/ic_launcher"
++        android:label="@string/app_name"
++        android:theme="@style/AppTheme" 
++        android:launchMode="singleTask">
++        <activity
++            android:name="com.app.Main.login"
++            android:label="@string/app_name" 
++            android:theme="@style/AppTheme"          
++            android:screenOrientation="portrait">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++        <activity 
++            android:name="com.app.Main.MainActivity" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.register" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++         <activity 
++            android:name="com.app.Main.EventMainPage" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.AddMoreParticipants" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++         <activity 
++            android:name="com.app.Main.AddActivity" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.CommentPage" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.PhotosWall" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.PhotoMainPage" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.searchFriend" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.addFriend" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.ChangPW" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <activity 
++            android:name="com.app.Main.NotificationCenter" 
++            android:theme="@style/AppTheme" 
++            android:label="@string/app_name"
++            android:screenOrientation="portrait">
++        </activity>
++        <service 
++             android:name="com.app.HeartBeating.HeartbeatService">
++             <intent-filter>
++                 <action android:name="HeartbeatService"/>
++             </intent-filter>
++         </service>
++    </application>
++    
++    <uses-permission android:name="android.permission.INTERNET" />
++ <!-- �?dcard中写入数据的权限 -->
++    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
++</manifest>
+diff --git a/bin/SlidingMenuDemo.apk b/bin/SlidingMenuDemo.apk
+new file mode 100644
+index 0000000..a3fd89e
+--- /dev/null
++++ b/bin/SlidingMenuDemo.apk
+Binary files differ
+diff --git a/bin/classes.dex b/bin/classes.dex
+new file mode 100644
+index 0000000..9c4da36
+--- /dev/null
++++ b/bin/classes.dex
+Binary files differ
+diff --git a/bin/classes/com/app/HeartBeating/HeartbeatService$MsgHandler.class b/bin/classes/com/app/HeartBeating/HeartbeatService$MsgHandler.class
+new file mode 100644
+index 0000000..8239717
+--- /dev/null
++++ b/bin/classes/com/app/HeartBeating/HeartbeatService$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/HeartBeating/HeartbeatService.class b/bin/classes/com/app/HeartBeating/HeartbeatService.class
+new file mode 100644
+index 0000000..e99df8c
+--- /dev/null
++++ b/bin/classes/com/app/HeartBeating/HeartbeatService.class
+Binary files differ
+diff --git a/bin/classes/com/app/HeartBeating/WebSocketUtil$1.class b/bin/classes/com/app/HeartBeating/WebSocketUtil$1.class
+new file mode 100644
+index 0000000..cfbfb31
+--- /dev/null
++++ b/bin/classes/com/app/HeartBeating/WebSocketUtil$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/HeartBeating/WebSocketUtil.class b/bin/classes/com/app/HeartBeating/WebSocketUtil.class
+new file mode 100644
+index 0000000..a9a274b
+--- /dev/null
++++ b/bin/classes/com/app/HeartBeating/WebSocketUtil.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$1.class b/bin/classes/com/app/Main/AddActivity$1.class
+new file mode 100644
+index 0000000..3f1af6b
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$2.class b/bin/classes/com/app/Main/AddActivity$2.class
+new file mode 100644
+index 0000000..09beb3c
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$3.class b/bin/classes/com/app/Main/AddActivity$3.class
+new file mode 100644
+index 0000000..5a955b0
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$4.class b/bin/classes/com/app/Main/AddActivity$4.class
+new file mode 100644
+index 0000000..1888309
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$5$1.class b/bin/classes/com/app/Main/AddActivity$5$1.class
+new file mode 100644
+index 0000000..95c0714
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$5$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$5$2.class b/bin/classes/com/app/Main/AddActivity$5$2.class
+new file mode 100644
+index 0000000..84ca014
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$5$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$5.class b/bin/classes/com/app/Main/AddActivity$5.class
+new file mode 100644
+index 0000000..21ffe79
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$6.class b/bin/classes/com/app/Main/AddActivity$6.class
+new file mode 100644
+index 0000000..f7f3288
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$7.class b/bin/classes/com/app/Main/AddActivity$7.class
+new file mode 100644
+index 0000000..ec75d76
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity$MessageHandler.class b/bin/classes/com/app/Main/AddActivity$MessageHandler.class
+new file mode 100644
+index 0000000..59639c7
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddActivity.class b/bin/classes/com/app/Main/AddActivity.class
+new file mode 100644
+index 0000000..2ff2661
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddActivity.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants$1.class b/bin/classes/com/app/Main/AddMoreParticipants$1.class
+new file mode 100644
+index 0000000..97d4026
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants$2.class b/bin/classes/com/app/Main/AddMoreParticipants$2.class
+new file mode 100644
+index 0000000..344762e
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants$3.class b/bin/classes/com/app/Main/AddMoreParticipants$3.class
+new file mode 100644
+index 0000000..2987830
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants$4.class b/bin/classes/com/app/Main/AddMoreParticipants$4.class
+new file mode 100644
+index 0000000..af29e5e
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants$MessageHandler.class b/bin/classes/com/app/Main/AddMoreParticipants$MessageHandler.class
+new file mode 100644
+index 0000000..f05e721
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/AddMoreParticipants.class b/bin/classes/com/app/Main/AddMoreParticipants.class
+new file mode 100644
+index 0000000..acc50a1
+--- /dev/null
++++ b/bin/classes/com/app/Main/AddMoreParticipants.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/ChangPW$1.class b/bin/classes/com/app/Main/ChangPW$1.class
+new file mode 100644
+index 0000000..294478e
+--- /dev/null
++++ b/bin/classes/com/app/Main/ChangPW$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/ChangPW$MessageHandler.class b/bin/classes/com/app/Main/ChangPW$MessageHandler.class
+new file mode 100644
+index 0000000..9fd6c80
+--- /dev/null
++++ b/bin/classes/com/app/Main/ChangPW$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/ChangPW.class b/bin/classes/com/app/Main/ChangPW.class
+new file mode 100644
+index 0000000..50338b1
+--- /dev/null
++++ b/bin/classes/com/app/Main/ChangPW.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/CommentPage$1.class b/bin/classes/com/app/Main/CommentPage$1.class
+new file mode 100644
+index 0000000..a94aa10
+--- /dev/null
++++ b/bin/classes/com/app/Main/CommentPage$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/CommentPage$2.class b/bin/classes/com/app/Main/CommentPage$2.class
+new file mode 100644
+index 0000000..6dd5b07
+--- /dev/null
++++ b/bin/classes/com/app/Main/CommentPage$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/CommentPage$3.class b/bin/classes/com/app/Main/CommentPage$3.class
+new file mode 100644
+index 0000000..48d9680
+--- /dev/null
++++ b/bin/classes/com/app/Main/CommentPage$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/CommentPage$myHandler.class b/bin/classes/com/app/Main/CommentPage$myHandler.class
+new file mode 100644
+index 0000000..660a018
+--- /dev/null
++++ b/bin/classes/com/app/Main/CommentPage$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/CommentPage.class b/bin/classes/com/app/Main/CommentPage.class
+new file mode 100644
+index 0000000..dbd3e11
+--- /dev/null
++++ b/bin/classes/com/app/Main/CommentPage.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/EventMainPage$1.class b/bin/classes/com/app/Main/EventMainPage$1.class
+new file mode 100644
+index 0000000..ebe2507
+--- /dev/null
++++ b/bin/classes/com/app/Main/EventMainPage$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/EventMainPage$2.class b/bin/classes/com/app/Main/EventMainPage$2.class
+new file mode 100644
+index 0000000..d4a688f
+--- /dev/null
++++ b/bin/classes/com/app/Main/EventMainPage$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/EventMainPage$MsgHandler.class b/bin/classes/com/app/Main/EventMainPage$MsgHandler.class
+new file mode 100644
+index 0000000..f64d2da
+--- /dev/null
++++ b/bin/classes/com/app/Main/EventMainPage$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/EventMainPage.class b/bin/classes/com/app/Main/EventMainPage.class
+new file mode 100644
+index 0000000..100a07b
+--- /dev/null
++++ b/bin/classes/com/app/Main/EventMainPage.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/MainActivity$MenuSideHandler$1.class b/bin/classes/com/app/Main/MainActivity$MenuSideHandler$1.class
+new file mode 100644
+index 0000000..c3c4c6d
+--- /dev/null
++++ b/bin/classes/com/app/Main/MainActivity$MenuSideHandler$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/MainActivity$MenuSideHandler$2.class b/bin/classes/com/app/Main/MainActivity$MenuSideHandler$2.class
+new file mode 100644
+index 0000000..165d31a
+--- /dev/null
++++ b/bin/classes/com/app/Main/MainActivity$MenuSideHandler$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/MainActivity$MenuSideHandler.class b/bin/classes/com/app/Main/MainActivity$MenuSideHandler.class
+new file mode 100644
+index 0000000..c527c53
+--- /dev/null
++++ b/bin/classes/com/app/Main/MainActivity$MenuSideHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/MainActivity$myHandler.class b/bin/classes/com/app/Main/MainActivity$myHandler.class
+new file mode 100644
+index 0000000..002f625
+--- /dev/null
++++ b/bin/classes/com/app/Main/MainActivity$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/MainActivity.class b/bin/classes/com/app/Main/MainActivity.class
+new file mode 100644
+index 0000000..adffeed
+--- /dev/null
++++ b/bin/classes/com/app/Main/MainActivity.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/NotificationCenter$myHandler.class b/bin/classes/com/app/Main/NotificationCenter$myHandler.class
+new file mode 100644
+index 0000000..4c40167
+--- /dev/null
++++ b/bin/classes/com/app/Main/NotificationCenter$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/NotificationCenter.class b/bin/classes/com/app/Main/NotificationCenter.class
+new file mode 100644
+index 0000000..6845bad
+--- /dev/null
++++ b/bin/classes/com/app/Main/NotificationCenter.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$1.class b/bin/classes/com/app/Main/PhotoMainPage$1.class
+new file mode 100644
+index 0000000..99fb9bc
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$2$1.class b/bin/classes/com/app/Main/PhotoMainPage$2$1.class
+new file mode 100644
+index 0000000..2467f89
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$2$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$2$2.class b/bin/classes/com/app/Main/PhotoMainPage$2$2.class
+new file mode 100644
+index 0000000..5473271
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$2$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$2.class b/bin/classes/com/app/Main/PhotoMainPage$2.class
+new file mode 100644
+index 0000000..4a6add5
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$3.class b/bin/classes/com/app/Main/PhotoMainPage$3.class
+new file mode 100644
+index 0000000..0372dbd
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$4$1.class b/bin/classes/com/app/Main/PhotoMainPage$4$1.class
+new file mode 100644
+index 0000000..453c95b
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$4$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$4$2.class b/bin/classes/com/app/Main/PhotoMainPage$4$2.class
+new file mode 100644
+index 0000000..f16035d
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$4$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$4.class b/bin/classes/com/app/Main/PhotoMainPage$4.class
+new file mode 100644
+index 0000000..c4ac74a
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$5.class b/bin/classes/com/app/Main/PhotoMainPage$5.class
+new file mode 100644
+index 0000000..6692b05
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$6.class b/bin/classes/com/app/Main/PhotoMainPage$6.class
+new file mode 100644
+index 0000000..4e4be4f
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$7.class b/bin/classes/com/app/Main/PhotoMainPage$7.class
+new file mode 100644
+index 0000000..2947fc6
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$8.class b/bin/classes/com/app/Main/PhotoMainPage$8.class
+new file mode 100644
+index 0000000..8880c80
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$8.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$9.class b/bin/classes/com/app/Main/PhotoMainPage$9.class
+new file mode 100644
+index 0000000..7af5dc8
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$9.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage$myHandler.class b/bin/classes/com/app/Main/PhotoMainPage$myHandler.class
+new file mode 100644
+index 0000000..d529613
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotoMainPage.class b/bin/classes/com/app/Main/PhotoMainPage.class
+new file mode 100644
+index 0000000..e30e954
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotoMainPage.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$1.class b/bin/classes/com/app/Main/PhotosWall$1.class
+new file mode 100644
+index 0000000..7e7e3fa
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$2.class b/bin/classes/com/app/Main/PhotosWall$2.class
+new file mode 100644
+index 0000000..0e1e69b
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$3.class b/bin/classes/com/app/Main/PhotosWall$3.class
+new file mode 100644
+index 0000000..3572577
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$4.class b/bin/classes/com/app/Main/PhotosWall$4.class
+new file mode 100644
+index 0000000..4c39adf
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$5.class b/bin/classes/com/app/Main/PhotosWall$5.class
+new file mode 100644
+index 0000000..ad5ce02
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$6.class b/bin/classes/com/app/Main/PhotosWall$6.class
+new file mode 100644
+index 0000000..31cf8d3
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$7.class b/bin/classes/com/app/Main/PhotosWall$7.class
+new file mode 100644
+index 0000000..62e1c6d
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$ImageMessageHandler.class b/bin/classes/com/app/Main/PhotosWall$ImageMessageHandler.class
+new file mode 100644
+index 0000000..0ec4243
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$ImageMessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall$MsgHandler.class b/bin/classes/com/app/Main/PhotosWall$MsgHandler.class
+new file mode 100644
+index 0000000..d69eda2
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/PhotosWall.class b/bin/classes/com/app/Main/PhotosWall.class
+new file mode 100644
+index 0000000..ea1acdc
+--- /dev/null
++++ b/bin/classes/com/app/Main/PhotosWall.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/addFriend$1.class b/bin/classes/com/app/Main/addFriend$1.class
+new file mode 100644
+index 0000000..a0eeb8f
+--- /dev/null
++++ b/bin/classes/com/app/Main/addFriend$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/addFriend$2$1.class b/bin/classes/com/app/Main/addFriend$2$1.class
+new file mode 100644
+index 0000000..a264c7f
+--- /dev/null
++++ b/bin/classes/com/app/Main/addFriend$2$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/addFriend$2.class b/bin/classes/com/app/Main/addFriend$2.class
+new file mode 100644
+index 0000000..7d88dbd
+--- /dev/null
++++ b/bin/classes/com/app/Main/addFriend$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/addFriend$MessageHandler.class b/bin/classes/com/app/Main/addFriend$MessageHandler.class
+new file mode 100644
+index 0000000..f0fb87f
+--- /dev/null
++++ b/bin/classes/com/app/Main/addFriend$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/addFriend.class b/bin/classes/com/app/Main/addFriend.class
+new file mode 100644
+index 0000000..a8011aa
+--- /dev/null
++++ b/bin/classes/com/app/Main/addFriend.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$1$1.class b/bin/classes/com/app/Main/login$1$1.class
+new file mode 100644
+index 0000000..2039f51
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$1$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$1.class b/bin/classes/com/app/Main/login$1.class
+new file mode 100644
+index 0000000..1343abe
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$2.class b/bin/classes/com/app/Main/login$2.class
+new file mode 100644
+index 0000000..df1cd1e
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$MsgHandler$1.class b/bin/classes/com/app/Main/login$MsgHandler$1.class
+new file mode 100644
+index 0000000..56b4955
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$MsgHandler$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$MsgHandler.class b/bin/classes/com/app/Main/login$MsgHandler.class
+new file mode 100644
+index 0000000..a686476
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login$MyBroadcastReceiver.class b/bin/classes/com/app/Main/login$MyBroadcastReceiver.class
+new file mode 100644
+index 0000000..efe08bc
+--- /dev/null
++++ b/bin/classes/com/app/Main/login$MyBroadcastReceiver.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/login.class b/bin/classes/com/app/Main/login.class
+new file mode 100644
+index 0000000..53bd846
+--- /dev/null
++++ b/bin/classes/com/app/Main/login.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/register$1.class b/bin/classes/com/app/Main/register$1.class
+new file mode 100644
+index 0000000..23e1052
+--- /dev/null
++++ b/bin/classes/com/app/Main/register$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/register$2.class b/bin/classes/com/app/Main/register$2.class
+new file mode 100644
+index 0000000..7e03e87
+--- /dev/null
++++ b/bin/classes/com/app/Main/register$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/register$MsgHandler.class b/bin/classes/com/app/Main/register$MsgHandler.class
+new file mode 100644
+index 0000000..d07b0a9
+--- /dev/null
++++ b/bin/classes/com/app/Main/register$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/register.class b/bin/classes/com/app/Main/register.class
+new file mode 100644
+index 0000000..390ebbd
+--- /dev/null
++++ b/bin/classes/com/app/Main/register.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/searchFriend$1.class b/bin/classes/com/app/Main/searchFriend$1.class
+new file mode 100644
+index 0000000..7cee2ba
+--- /dev/null
++++ b/bin/classes/com/app/Main/searchFriend$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/searchFriend$MessageHandler.class b/bin/classes/com/app/Main/searchFriend$MessageHandler.class
+new file mode 100644
+index 0000000..e036ddb
+--- /dev/null
++++ b/bin/classes/com/app/Main/searchFriend$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/Main/searchFriend.class b/bin/classes/com/app/Main/searchFriend.class
+new file mode 100644
+index 0000000..8f4c5e6
+--- /dev/null
++++ b/bin/classes/com/app/Main/searchFriend.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$1.class b/bin/classes/com/app/classes/FriendCenter$1.class
+new file mode 100644
+index 0000000..32d3b66
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$2.class b/bin/classes/com/app/classes/FriendCenter$2.class
+new file mode 100644
+index 0000000..eeee12e
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$3.class b/bin/classes/com/app/classes/FriendCenter$3.class
+new file mode 100644
+index 0000000..a654335
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$4.class b/bin/classes/com/app/classes/FriendCenter$4.class
+new file mode 100644
+index 0000000..9738508
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$5.class b/bin/classes/com/app/classes/FriendCenter$5.class
+new file mode 100644
+index 0000000..9820257
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$6.class b/bin/classes/com/app/classes/FriendCenter$6.class
+new file mode 100644
+index 0000000..8d8a5f2
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$7.class b/bin/classes/com/app/classes/FriendCenter$7.class
+new file mode 100644
+index 0000000..c858200
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$PinYinComparator.class b/bin/classes/com/app/classes/FriendCenter$PinYinComparator.class
+new file mode 100644
+index 0000000..1730de8
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$PinYinComparator.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter$myHandler.class b/bin/classes/com/app/classes/FriendCenter$myHandler.class
+new file mode 100644
+index 0000000..4bd6119
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/FriendCenter.class b/bin/classes/com/app/classes/FriendCenter.class
+new file mode 100644
+index 0000000..e460495
+--- /dev/null
++++ b/bin/classes/com/app/classes/FriendCenter.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MenuSide$1.class b/bin/classes/com/app/classes/MenuSide$1.class
+new file mode 100644
+index 0000000..f32931b
+--- /dev/null
++++ b/bin/classes/com/app/classes/MenuSide$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MenuSide.class b/bin/classes/com/app/classes/MenuSide.class
+new file mode 100644
+index 0000000..2ab70de
+--- /dev/null
++++ b/bin/classes/com/app/classes/MenuSide.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$1.class b/bin/classes/com/app/classes/MyEvents$1.class
+new file mode 100644
+index 0000000..59e17f7
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$2.class b/bin/classes/com/app/classes/MyEvents$2.class
+new file mode 100644
+index 0000000..de22bd1
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$3.class b/bin/classes/com/app/classes/MyEvents$3.class
+new file mode 100644
+index 0000000..995e79d
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$4.class b/bin/classes/com/app/classes/MyEvents$4.class
+new file mode 100644
+index 0000000..71fe5f9
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$5.class b/bin/classes/com/app/classes/MyEvents$5.class
+new file mode 100644
+index 0000000..82b19ca
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$6.class b/bin/classes/com/app/classes/MyEvents$6.class
+new file mode 100644
+index 0000000..601fefe
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$JoinBroadcastReceiver.class b/bin/classes/com/app/classes/MyEvents$JoinBroadcastReceiver.class
+new file mode 100644
+index 0000000..a01e29f
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$JoinBroadcastReceiver.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$MsgHandler$1.class b/bin/classes/com/app/classes/MyEvents$MsgHandler$1.class
+new file mode 100644
+index 0000000..37b2311
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$MsgHandler$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$MsgHandler.class b/bin/classes/com/app/classes/MyEvents$MsgHandler.class
+new file mode 100644
+index 0000000..3bccac0
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$MsgHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents$cardHandler.class b/bin/classes/com/app/classes/MyEvents$cardHandler.class
+new file mode 100644
+index 0000000..71df3ee
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents$cardHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/MyEvents.class b/bin/classes/com/app/classes/MyEvents.class
+new file mode 100644
+index 0000000..86274a1
+--- /dev/null
++++ b/bin/classes/com/app/classes/MyEvents.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/RelativeEvents$1.class b/bin/classes/com/app/classes/RelativeEvents$1.class
+new file mode 100644
+index 0000000..a129bde
+--- /dev/null
++++ b/bin/classes/com/app/classes/RelativeEvents$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/RelativeEvents$2.class b/bin/classes/com/app/classes/RelativeEvents$2.class
+new file mode 100644
+index 0000000..64bec9b
+--- /dev/null
++++ b/bin/classes/com/app/classes/RelativeEvents$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/RelativeEvents$cardHandler.class b/bin/classes/com/app/classes/RelativeEvents$cardHandler.class
+new file mode 100644
+index 0000000..45e9953
+--- /dev/null
++++ b/bin/classes/com/app/classes/RelativeEvents$cardHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/RelativeEvents.class b/bin/classes/com/app/classes/RelativeEvents.class
+new file mode 100644
+index 0000000..ad64cb4
+--- /dev/null
++++ b/bin/classes/com/app/classes/RelativeEvents.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$1.class b/bin/classes/com/app/classes/Settings$1.class
+new file mode 100644
+index 0000000..39b6191
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$2.class b/bin/classes/com/app/classes/Settings$2.class
+new file mode 100644
+index 0000000..ab47c54
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$3.class b/bin/classes/com/app/classes/Settings$3.class
+new file mode 100644
+index 0000000..40e0b9d
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$4$1.class b/bin/classes/com/app/classes/Settings$4$1.class
+new file mode 100644
+index 0000000..939ba32
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$4$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$4$2.class b/bin/classes/com/app/classes/Settings$4$2.class
+new file mode 100644
+index 0000000..b2a1789
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$4$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$4$3.class b/bin/classes/com/app/classes/Settings$4$3.class
+new file mode 100644
+index 0000000..6ac3fee
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$4$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$4.class b/bin/classes/com/app/classes/Settings$4.class
+new file mode 100644
+index 0000000..da63de7
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$5$1.class b/bin/classes/com/app/classes/Settings$5$1.class
+new file mode 100644
+index 0000000..7520ab4
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$5$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$5.class b/bin/classes/com/app/classes/Settings$5.class
+new file mode 100644
+index 0000000..aa1f1ab
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$6$1.class b/bin/classes/com/app/classes/Settings$6$1.class
+new file mode 100644
+index 0000000..c3a4951
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$6$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$6.class b/bin/classes/com/app/classes/Settings$6.class
+new file mode 100644
+index 0000000..250c168
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$7.class b/bin/classes/com/app/classes/Settings$7.class
+new file mode 100644
+index 0000000..81b89ad
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$8.class b/bin/classes/com/app/classes/Settings$8.class
+new file mode 100644
+index 0000000..fb295ab
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$8.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$9.class b/bin/classes/com/app/classes/Settings$9.class
+new file mode 100644
+index 0000000..b8fe14e
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$9.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings$MessageHandler.class b/bin/classes/com/app/classes/Settings$MessageHandler.class
+new file mode 100644
+index 0000000..f1ce93f
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/classes/Settings.class b/bin/classes/com/app/classes/Settings.class
+new file mode 100644
+index 0000000..840f831
+--- /dev/null
++++ b/bin/classes/com/app/classes/Settings.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/AvatarDialog.class b/bin/classes/com/app/customwidget/AvatarDialog.class
+new file mode 100644
+index 0000000..69bbe8e
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/AvatarDialog.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/LetterSidebar$OnTouchingLetterChangedListener.class b/bin/classes/com/app/customwidget/LetterSidebar$OnTouchingLetterChangedListener.class
+new file mode 100644
+index 0000000..d0f5874
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/LetterSidebar$OnTouchingLetterChangedListener.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/LetterSidebar.class b/bin/classes/com/app/customwidget/LetterSidebar.class
+new file mode 100644
+index 0000000..3ceca3d
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/LetterSidebar.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/MyScrollListView$1.class b/bin/classes/com/app/customwidget/MyScrollListView$1.class
+new file mode 100644
+index 0000000..cf9dee7
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/MyScrollListView$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/MyScrollListView$onScrollListViewListener.class b/bin/classes/com/app/customwidget/MyScrollListView$onScrollListViewListener.class
+new file mode 100644
+index 0000000..39fd959
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/MyScrollListView$onScrollListViewListener.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/MyScrollListView.class b/bin/classes/com/app/customwidget/MyScrollListView.class
+new file mode 100644
+index 0000000..3a00815
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/MyScrollListView.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/OnWheelChangedListener.class b/bin/classes/com/app/customwidget/OnWheelChangedListener.class
+new file mode 100644
+index 0000000..df0f8ce
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/OnWheelChangedListener.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/OnWheelScrollListener.class b/bin/classes/com/app/customwidget/OnWheelScrollListener.class
+new file mode 100644
+index 0000000..8941c76
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/OnWheelScrollListener.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$1.class b/bin/classes/com/app/customwidget/PullUpDownView$1.class
+new file mode 100644
+index 0000000..eb4980b
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$2.class b/bin/classes/com/app/customwidget/PullUpDownView$2.class
+new file mode 100644
+index 0000000..fb2f445
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$HideHeaderTimerTask.class b/bin/classes/com/app/customwidget/PullUpDownView$HideHeaderTimerTask.class
+new file mode 100644
+index 0000000..3319e8e
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$HideHeaderTimerTask.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$ShowHeaderTimerTask.class b/bin/classes/com/app/customwidget/PullUpDownView$ShowHeaderTimerTask.class
+new file mode 100644
+index 0000000..0fd86f7
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$ShowHeaderTimerTask.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$myHandler.class b/bin/classes/com/app/customwidget/PullUpDownView$myHandler.class
+new file mode 100644
+index 0000000..b0f084c
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView$onPullListener.class b/bin/classes/com/app/customwidget/PullUpDownView$onPullListener.class
+new file mode 100644
+index 0000000..b7829d6
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView$onPullListener.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/PullUpDownView.class b/bin/classes/com/app/customwidget/PullUpDownView.class
+new file mode 100644
+index 0000000..7d0d665
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/PullUpDownView.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/WheelView$1.class b/bin/classes/com/app/customwidget/WheelView$1.class
+new file mode 100644
+index 0000000..c85165f
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/WheelView$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/WheelView$2.class b/bin/classes/com/app/customwidget/WheelView$2.class
+new file mode 100644
+index 0000000..1f1b644
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/WheelView$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/customwidget/WheelView.class b/bin/classes/com/app/customwidget/WheelView.class
+new file mode 100644
+index 0000000..8667ecd
+--- /dev/null
++++ b/bin/classes/com/app/customwidget/WheelView.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/ActivityStruct.class b/bin/classes/com/app/localDataBase/ActivityStruct.class
+new file mode 100644
+index 0000000..9f5ac64
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/ActivityStruct.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/FriendStruct.class b/bin/classes/com/app/localDataBase/FriendStruct.class
+new file mode 100644
+index 0000000..839ae11
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/FriendStruct.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/MySQLiteOpenHelper.class b/bin/classes/com/app/localDataBase/MySQLiteOpenHelper.class
+new file mode 100644
+index 0000000..6f92937
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/MySQLiteOpenHelper.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/NoteStruct.class b/bin/classes/com/app/localDataBase/NoteStruct.class
+new file mode 100644
+index 0000000..30435fc
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/NoteStruct.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/NotificationTableAdapter.class b/bin/classes/com/app/localDataBase/NotificationTableAdapter.class
+new file mode 100644
+index 0000000..b79ef38
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/NotificationTableAdapter.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/TableActivity.class b/bin/classes/com/app/localDataBase/TableActivity.class
+new file mode 100644
+index 0000000..54c1b54
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/TableActivity.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/TableFriends.class b/bin/classes/com/app/localDataBase/TableFriends.class
+new file mode 100644
+index 0000000..de0f68d
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/TableFriends.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/TableNote.class b/bin/classes/com/app/localDataBase/TableNote.class
+new file mode 100644
+index 0000000..0bca012
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/TableNote.class
+Binary files differ
+diff --git a/bin/classes/com/app/localDataBase/notificationObject.class b/bin/classes/com/app/localDataBase/notificationObject.class
+new file mode 100644
+index 0000000..128eefe
+--- /dev/null
++++ b/bin/classes/com/app/localDataBase/notificationObject.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment$1.class b/bin/classes/com/app/util/AdapterForComment$1.class
+new file mode 100644
+index 0000000..9f32236
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment$2.class b/bin/classes/com/app/util/AdapterForComment$2.class
+new file mode 100644
+index 0000000..16fe7e6
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment$3.class b/bin/classes/com/app/util/AdapterForComment$3.class
+new file mode 100644
+index 0000000..f182b01
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment$CommentViewHolder.class b/bin/classes/com/app/util/AdapterForComment$CommentViewHolder.class
+new file mode 100644
+index 0000000..2fd2c31
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment$CommentViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment$ReplyViewHolder.class b/bin/classes/com/app/util/AdapterForComment$ReplyViewHolder.class
+new file mode 100644
+index 0000000..7437d87
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment$ReplyViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForComment.class b/bin/classes/com/app/util/AdapterForComment.class
+new file mode 100644
+index 0000000..5c4f6b7
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForComment.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo$1$1$1.class b/bin/classes/com/app/util/AdapterForFriendInfo$1$1$1.class
+new file mode 100644
+index 0000000..531d5f5
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo$1$1$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo$1$1.class b/bin/classes/com/app/util/AdapterForFriendInfo$1$1.class
+new file mode 100644
+index 0000000..876a30a
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo$1$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo$1.class b/bin/classes/com/app/util/AdapterForFriendInfo$1.class
+new file mode 100644
+index 0000000..0e7b985
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo$MessageHandler.class b/bin/classes/com/app/util/AdapterForFriendInfo$MessageHandler.class
+new file mode 100644
+index 0000000..1fe8e8f
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo$MessageHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo$ViewHolder.class b/bin/classes/com/app/util/AdapterForFriendInfo$ViewHolder.class
+new file mode 100644
+index 0000000..5027677
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo$ViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendInfo.class b/bin/classes/com/app/util/AdapterForFriendInfo.class
+new file mode 100644
+index 0000000..d212e31
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendInfo.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendList$ViewHolder.class b/bin/classes/com/app/util/AdapterForFriendList$ViewHolder.class
+new file mode 100644
+index 0000000..ca1e11c
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendList$ViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForFriendList.class b/bin/classes/com/app/util/AdapterForFriendList.class
+new file mode 100644
+index 0000000..2711b29
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForFriendList.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForPaticipantList$FriendInfor.class b/bin/classes/com/app/util/AdapterForPaticipantList$FriendInfor.class
+new file mode 100644
+index 0000000..6b280bc
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForPaticipantList$FriendInfor.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForPaticipantList$ViewHolder.class b/bin/classes/com/app/util/AdapterForPaticipantList$ViewHolder.class
+new file mode 100644
+index 0000000..1a26b9d
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForPaticipantList$ViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForPaticipantList.class b/bin/classes/com/app/util/AdapterForPaticipantList.class
+new file mode 100644
+index 0000000..62039a9
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForPaticipantList.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForRequest$1.class b/bin/classes/com/app/util/AdapterForRequest$1.class
+new file mode 100644
+index 0000000..9eab455
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForRequest$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AdapterForRequest.class b/bin/classes/com/app/util/AdapterForRequest.class
+new file mode 100644
+index 0000000..3e8ffee
+--- /dev/null
++++ b/bin/classes/com/app/util/AdapterForRequest.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/Area.class b/bin/classes/com/app/util/Area.class
+new file mode 100644
+index 0000000..7f6a15d
+--- /dev/null
++++ b/bin/classes/com/app/util/Area.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AreaXMLParser.class b/bin/classes/com/app/util/AreaXMLParser.class
+new file mode 100644
+index 0000000..b387728
+--- /dev/null
++++ b/bin/classes/com/app/util/AreaXMLParser.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/AvatarDialog.class b/bin/classes/com/app/util/AvatarDialog.class
+new file mode 100644
+index 0000000..b3d347c
+--- /dev/null
++++ b/bin/classes/com/app/util/AvatarDialog.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/CircularImage.class b/bin/classes/com/app/util/CircularImage.class
+new file mode 100644
+index 0000000..5e91363
+--- /dev/null
++++ b/bin/classes/com/app/util/CircularImage.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/City.class b/bin/classes/com/app/util/City.class
+new file mode 100644
+index 0000000..ed65075
+--- /dev/null
++++ b/bin/classes/com/app/util/City.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/CommentStruct.class b/bin/classes/com/app/util/CommentStruct.class
+new file mode 100644
+index 0000000..b6e2491
+--- /dev/null
++++ b/bin/classes/com/app/util/CommentStruct.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/HttpHelperPlus$1.class b/bin/classes/com/app/util/HttpHelperPlus$1.class
+new file mode 100644
+index 0000000..e8b7cf5
+--- /dev/null
++++ b/bin/classes/com/app/util/HttpHelperPlus$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/HttpHelperPlus.class b/bin/classes/com/app/util/HttpHelperPlus.class
+new file mode 100644
+index 0000000..2205ba8
+--- /dev/null
++++ b/bin/classes/com/app/util/HttpHelperPlus.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/HttpSender$MyThread.class b/bin/classes/com/app/util/HttpSender$MyThread.class
+new file mode 100644
+index 0000000..2c0072b
+--- /dev/null
++++ b/bin/classes/com/app/util/HttpSender$MyThread.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/HttpSender.class b/bin/classes/com/app/util/HttpSender.class
+new file mode 100644
+index 0000000..dfb0d43
+--- /dev/null
++++ b/bin/classes/com/app/util/HttpSender.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/KeyFile.class b/bin/classes/com/app/util/KeyFile.class
+new file mode 100644
+index 0000000..cb21a6c
+--- /dev/null
++++ b/bin/classes/com/app/util/KeyFile.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/ListViewUtility.class b/bin/classes/com/app/util/ListViewUtility.class
+new file mode 100644
+index 0000000..11dcece
+--- /dev/null
++++ b/bin/classes/com/app/util/ListViewUtility.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/ListWheelAdapter.class b/bin/classes/com/app/util/ListWheelAdapter.class
+new file mode 100644
+index 0000000..df90ed4
+--- /dev/null
++++ b/bin/classes/com/app/util/ListWheelAdapter.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MaskedImage.class b/bin/classes/com/app/util/MaskedImage.class
+new file mode 100644
+index 0000000..f91efa9
+--- /dev/null
++++ b/bin/classes/com/app/util/MaskedImage.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter$1.class b/bin/classes/com/app/util/MessagaAdapter$1.class
+new file mode 100644
+index 0000000..42f8c52
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter$2.class b/bin/classes/com/app/util/MessagaAdapter$2.class
+new file mode 100644
+index 0000000..87271ad
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter$3.class b/bin/classes/com/app/util/MessagaAdapter$3.class
+new file mode 100644
+index 0000000..ec03f20
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter$ViewHolder.class b/bin/classes/com/app/util/MessagaAdapter$ViewHolder.class
+new file mode 100644
+index 0000000..efc7a56
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter$ViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter$myHandler.class b/bin/classes/com/app/util/MessagaAdapter$myHandler.class
+new file mode 100644
+index 0000000..7611ac2
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MessagaAdapter.class b/bin/classes/com/app/util/MessagaAdapter.class
+new file mode 100644
+index 0000000..71f02a1
+--- /dev/null
++++ b/bin/classes/com/app/util/MessagaAdapter.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/Messager.class b/bin/classes/com/app/util/Messager.class
+new file mode 100644
+index 0000000..ea6773b
+--- /dev/null
++++ b/bin/classes/com/app/util/Messager.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MyBroadcastReceiver.class b/bin/classes/com/app/util/MyBroadcastReceiver.class
+new file mode 100644
+index 0000000..17daeb2
+--- /dev/null
++++ b/bin/classes/com/app/util/MyBroadcastReceiver.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/MyHorizontalScrollView.class b/bin/classes/com/app/util/MyHorizontalScrollView.class
+new file mode 100644
+index 0000000..d5320d1
+--- /dev/null
++++ b/bin/classes/com/app/util/MyHorizontalScrollView.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/OperationCode.class b/bin/classes/com/app/util/OperationCode.class
+new file mode 100644
+index 0000000..a0d22b1
+--- /dev/null
++++ b/bin/classes/com/app/util/OperationCode.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/RegUtils.class b/bin/classes/com/app/util/RegUtils.class
+new file mode 100644
+index 0000000..f03408a
+--- /dev/null
++++ b/bin/classes/com/app/util/RegUtils.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/ReturnCode.class b/bin/classes/com/app/util/ReturnCode.class
+new file mode 100644
+index 0000000..053481d
+--- /dev/null
++++ b/bin/classes/com/app/util/ReturnCode.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/SimpleKeyValue.class b/bin/classes/com/app/util/SimpleKeyValue.class
+new file mode 100644
+index 0000000..78c55e1
+--- /dev/null
++++ b/bin/classes/com/app/util/SimpleKeyValue.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/State.class b/bin/classes/com/app/util/State.class
+new file mode 100644
+index 0000000..e2c6dbb
+--- /dev/null
++++ b/bin/classes/com/app/util/State.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/TimeStruct.class b/bin/classes/com/app/util/TimeStruct.class
+new file mode 100644
+index 0000000..9464d2e
+--- /dev/null
++++ b/bin/classes/com/app/util/TimeStruct.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/WheelAdapter.class b/bin/classes/com/app/util/WheelAdapter.class
+new file mode 100644
+index 0000000..da719d5
+--- /dev/null
++++ b/bin/classes/com/app/util/WheelAdapter.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$1.class b/bin/classes/com/app/util/cardAdapter$1.class
+new file mode 100644
+index 0000000..801aadd
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$2.class b/bin/classes/com/app/util/cardAdapter$2.class
+new file mode 100644
+index 0000000..42f31ae
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$3.class b/bin/classes/com/app/util/cardAdapter$3.class
+new file mode 100644
+index 0000000..a3d475c
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$3.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$4.class b/bin/classes/com/app/util/cardAdapter$4.class
+new file mode 100644
+index 0000000..ca8d8d2
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$4.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$5.class b/bin/classes/com/app/util/cardAdapter$5.class
+new file mode 100644
+index 0000000..f44c0aa
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$5.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$6.class b/bin/classes/com/app/util/cardAdapter$6.class
+new file mode 100644
+index 0000000..7b0f7a7
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$6.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$7.class b/bin/classes/com/app/util/cardAdapter$7.class
+new file mode 100644
+index 0000000..c7302d1
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$7.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$8.class b/bin/classes/com/app/util/cardAdapter$8.class
+new file mode 100644
+index 0000000..9ff9182
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$8.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter$ViewHolder.class b/bin/classes/com/app/util/cardAdapter$ViewHolder.class
+new file mode 100644
+index 0000000..8c65e04
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter$ViewHolder.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/cardAdapter.class b/bin/classes/com/app/util/cardAdapter.class
+new file mode 100644
+index 0000000..4e8f317
+--- /dev/null
++++ b/bin/classes/com/app/util/cardAdapter.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/imageUtil$1.class b/bin/classes/com/app/util/imageUtil$1.class
+new file mode 100644
+index 0000000..416b233
+--- /dev/null
++++ b/bin/classes/com/app/util/imageUtil$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/imageUtil$2.class b/bin/classes/com/app/util/imageUtil$2.class
+new file mode 100644
+index 0000000..1636b3f
+--- /dev/null
++++ b/bin/classes/com/app/util/imageUtil$2.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/imageUtil$myHandler$1.class b/bin/classes/com/app/util/imageUtil$myHandler$1.class
+new file mode 100644
+index 0000000..b9d4693
+--- /dev/null
++++ b/bin/classes/com/app/util/imageUtil$myHandler$1.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/imageUtil$myHandler.class b/bin/classes/com/app/util/imageUtil$myHandler.class
+new file mode 100644
+index 0000000..13864db
+--- /dev/null
++++ b/bin/classes/com/app/util/imageUtil$myHandler.class
+Binary files differ
+diff --git a/bin/classes/com/app/util/imageUtil.class b/bin/classes/com/app/util/imageUtil.class
+new file mode 100644
+index 0000000..8f821c6
+--- /dev/null
++++ b/bin/classes/com/app/util/imageUtil.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/HybiParser$HappyDataInputStream.class b/bin/classes/com/codebutler/android_websockets/HybiParser$HappyDataInputStream.class
+new file mode 100644
+index 0000000..f182538
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/HybiParser$HappyDataInputStream.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/HybiParser$ProtocolError.class b/bin/classes/com/codebutler/android_websockets/HybiParser$ProtocolError.class
+new file mode 100644
+index 0000000..e3904d1
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/HybiParser$ProtocolError.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/HybiParser.class b/bin/classes/com/codebutler/android_websockets/HybiParser.class
+new file mode 100644
+index 0000000..d546cb0
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/HybiParser.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/WebSocketClient$1.class b/bin/classes/com/codebutler/android_websockets/WebSocketClient$1.class
+new file mode 100644
+index 0000000..82549ba
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/WebSocketClient$1.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/WebSocketClient$2.class b/bin/classes/com/codebutler/android_websockets/WebSocketClient$2.class
+new file mode 100644
+index 0000000..8edbac7
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/WebSocketClient$2.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/WebSocketClient$3.class b/bin/classes/com/codebutler/android_websockets/WebSocketClient$3.class
+new file mode 100644
+index 0000000..53aa0e5
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/WebSocketClient$3.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/WebSocketClient$Listener.class b/bin/classes/com/codebutler/android_websockets/WebSocketClient$Listener.class
+new file mode 100644
+index 0000000..891e74b
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/WebSocketClient$Listener.class
+Binary files differ
+diff --git a/bin/classes/com/codebutler/android_websockets/WebSocketClient.class b/bin/classes/com/codebutler/android_websockets/WebSocketClient.class
+new file mode 100644
+index 0000000..351560a
+--- /dev/null
++++ b/bin/classes/com/codebutler/android_websockets/WebSocketClient.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/BuildConfig.class b/bin/classes/com/example/slidingmenudemo/BuildConfig.class
+new file mode 100644
+index 0000000..1964f99
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/BuildConfig.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$attr.class b/bin/classes/com/example/slidingmenudemo/R$attr.class
+new file mode 100644
+index 0000000..07d66e9
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$attr.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$color.class b/bin/classes/com/example/slidingmenudemo/R$color.class
+new file mode 100644
+index 0000000..20f3b30
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$color.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$dimen.class b/bin/classes/com/example/slidingmenudemo/R$dimen.class
+new file mode 100644
+index 0000000..d418634
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$dimen.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$drawable.class b/bin/classes/com/example/slidingmenudemo/R$drawable.class
+new file mode 100644
+index 0000000..98b8c98
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$drawable.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$id.class b/bin/classes/com/example/slidingmenudemo/R$id.class
+new file mode 100644
+index 0000000..5b1b569
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$id.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$layout.class b/bin/classes/com/example/slidingmenudemo/R$layout.class
+new file mode 100644
+index 0000000..bc5a2d5
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$layout.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$menu.class b/bin/classes/com/example/slidingmenudemo/R$menu.class
+new file mode 100644
+index 0000000..80d082a
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$menu.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$string.class b/bin/classes/com/example/slidingmenudemo/R$string.class
+new file mode 100644
+index 0000000..56cfff0
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$string.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$style.class b/bin/classes/com/example/slidingmenudemo/R$style.class
+new file mode 100644
+index 0000000..30d12a2
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$style.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R$styleable.class b/bin/classes/com/example/slidingmenudemo/R$styleable.class
+new file mode 100644
+index 0000000..eca0f71
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R$styleable.class
+Binary files differ
+diff --git a/bin/classes/com/example/slidingmenudemo/R.class b/bin/classes/com/example/slidingmenudemo/R.class
+new file mode 100644
+index 0000000..55cbc06
+--- /dev/null
++++ b/bin/classes/com/example/slidingmenudemo/R.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$1.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$1.class
+new file mode 100644
+index 0000000..d5ee952
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$1.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$2.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$2.class
+new file mode 100644
+index 0000000..742dd19
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$2.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$OnPageChangeListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$OnPageChangeListener.class
+new file mode 100644
+index 0000000..cc74088
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$OnPageChangeListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$SimpleOnPageChangeListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$SimpleOnPageChangeListener.class
+new file mode 100644
+index 0000000..9617a37
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove$SimpleOnPageChangeListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove.class
+new file mode 100644
+index 0000000..8826d4d
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewAbove.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewBehind.class b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewBehind.class
+new file mode 100644
+index 0000000..2f9dbe6
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/CustomViewBehind.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$1.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$1.class
+new file mode 100644
+index 0000000..abaeffa
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$1.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$2.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$2.class
+new file mode 100644
+index 0000000..40d1ba9
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$2.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$CanvasTransformer.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$CanvasTransformer.class
+new file mode 100644
+index 0000000..c04e151
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$CanvasTransformer.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnCloseListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnCloseListener.class
+new file mode 100644
+index 0000000..84d7328
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnCloseListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnClosedListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnClosedListener.class
+new file mode 100644
+index 0000000..4d7d960
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnClosedListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenListener.class
+new file mode 100644
+index 0000000..d764bbd
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenedListener.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenedListener.class
+new file mode 100644
+index 0000000..9a0d027
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$OnOpenedListener.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState$1.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState$1.class
+new file mode 100644
+index 0000000..297891b
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState$1.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState.class
+new file mode 100644
+index 0000000..9d29125
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu$SavedState.class
+Binary files differ
+diff --git a/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu.class b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu.class
+new file mode 100644
+index 0000000..852153e
+--- /dev/null
++++ b/bin/classes/com/jeremyfeinstein/slidingmenu/SlidingMenu.class
+Binary files differ
+diff --git a/bin/dexedLibs/android-support-v4-0810a8a2478abde73b686984e69a790e.jar b/bin/dexedLibs/android-support-v4-0810a8a2478abde73b686984e69a790e.jar
+new file mode 100644
+index 0000000..cc2af1c
+--- /dev/null
++++ b/bin/dexedLibs/android-support-v4-0810a8a2478abde73b686984e69a790e.jar
+Binary files differ
+diff --git a/bin/dexedLibs/android-support-v4-e58542264226aac7a8fed1dbc885de93.jar b/bin/dexedLibs/android-support-v4-e58542264226aac7a8fed1dbc885de93.jar
+new file mode 100644
+index 0000000..2545779
+--- /dev/null
++++ b/bin/dexedLibs/android-support-v4-e58542264226aac7a8fed1dbc885de93.jar
+Binary files differ
+diff --git a/bin/dexedLibs/httpmime-4.2.1-ccd96fcb00e20e9676e9478151746e4d.jar b/bin/dexedLibs/httpmime-4.2.1-ccd96fcb00e20e9676e9478151746e4d.jar
+new file mode 100644
+index 0000000..54820fc
+--- /dev/null
++++ b/bin/dexedLibs/httpmime-4.2.1-ccd96fcb00e20e9676e9478151746e4d.jar
+Binary files differ
+diff --git a/bin/dexedLibs/pinyin4j-2.5.0-cb00136d1cd0e41e9ce09732262b7e6e.jar b/bin/dexedLibs/pinyin4j-2.5.0-cb00136d1cd0e41e9ce09732262b7e6e.jar
+new file mode 100644
+index 0000000..d4844ca
+--- /dev/null
++++ b/bin/dexedLibs/pinyin4j-2.5.0-cb00136d1cd0e41e9ce09732262b7e6e.jar
+Binary files differ
+diff --git a/bin/jarlist.cache b/bin/jarlist.cache
+new file mode 100644
+index 0000000..0565465
+--- /dev/null
++++ b/bin/jarlist.cache
+@@ -0,0 +1,3 @@
++# cache for current jar dependency. DO NOT EDIT.
++# format is <lastModified> <length> <SHA-1> <path>
++# Encoding is UTF-8
+diff --git a/bin/res/drawable-hdpi/activity_item_left_buttom.png b/bin/res/drawable-hdpi/activity_item_left_buttom.png
+new file mode 100644
+index 0000000..b91ee1b
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_item_left_buttom.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_item_left_top.png b/bin/res/drawable-hdpi/activity_item_left_top.png
+new file mode 100644
+index 0000000..77e9d82
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_item_left_top.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_comment.png b/bin/res/drawable-hdpi/activity_right_comment.png
+new file mode 100644
+index 0000000..550de1f
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_comment.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_divider.png b/bin/res/drawable-hdpi/activity_right_divider.png
+new file mode 100644
+index 0000000..33718e2
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_divider.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_photo.png b/bin/res/drawable-hdpi/activity_right_photo.png
+new file mode 100644
+index 0000000..bc1b904
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_photo.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_photo_white.png b/bin/res/drawable-hdpi/activity_right_photo_white.png
+new file mode 100644
+index 0000000..a96d593
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_photo_white.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_slideleft.png b/bin/res/drawable-hdpi/activity_right_slideleft.png
+new file mode 100644
+index 0000000..352b8a0
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_slideleft.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activity_right_slideright.png b/bin/res/drawable-hdpi/activity_right_slideright.png
+new file mode 100644
+index 0000000..2cfeee1
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activity_right_slideright.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activityinputbefore.png b/bin/res/drawable-hdpi/activityinputbefore.png
+new file mode 100644
+index 0000000..57fe66c
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activityinputbefore.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/activityinputhint.png b/bin/res/drawable-hdpi/activityinputhint.png
+new file mode 100644
+index 0000000..b4c2ecf
+--- /dev/null
++++ b/bin/res/drawable-hdpi/activityinputhint.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/cancelactivity.png b/bin/res/drawable-hdpi/cancelactivity.png
+new file mode 100644
+index 0000000..6681398
+--- /dev/null
++++ b/bin/res/drawable-hdpi/cancelactivity.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/female.png b/bin/res/drawable-hdpi/female.png
+new file mode 100644
+index 0000000..5f0e801
+--- /dev/null
++++ b/bin/res/drawable-hdpi/female.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/head_bg.png b/bin/res/drawable-hdpi/head_bg.png
+new file mode 100644
+index 0000000..83b7b27
+--- /dev/null
++++ b/bin/res/drawable-hdpi/head_bg.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/ic_launcher.png b/bin/res/drawable-hdpi/ic_launcher.png
+new file mode 100644
+index 0000000..efa7c5f
+--- /dev/null
++++ b/bin/res/drawable-hdpi/ic_launcher.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/join.png b/bin/res/drawable-hdpi/join.png
+new file mode 100644
+index 0000000..b8428c2
+--- /dev/null
++++ b/bin/res/drawable-hdpi/join.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/l_quotation.png b/bin/res/drawable-hdpi/l_quotation.png
+new file mode 100644
+index 0000000..edd8c01
+--- /dev/null
++++ b/bin/res/drawable-hdpi/l_quotation.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/login.png b/bin/res/drawable-hdpi/login.png
+new file mode 100644
+index 0000000..9f3bd78
+--- /dev/null
++++ b/bin/res/drawable-hdpi/login.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/male.png b/bin/res/drawable-hdpi/male.png
+new file mode 100644
+index 0000000..da3c5a3
+--- /dev/null
++++ b/bin/res/drawable-hdpi/male.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/newactivitybtn.png b/bin/res/drawable-hdpi/newactivitybtn.png
+new file mode 100644
+index 0000000..a652e4b
+--- /dev/null
++++ b/bin/res/drawable-hdpi/newactivitybtn.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_01.png b/bin/res/drawable-hdpi/off_01.png
+new file mode 100644
+index 0000000..9af354b
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_01.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_02.png b/bin/res/drawable-hdpi/off_02.png
+new file mode 100644
+index 0000000..ce54741
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_02.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_03.png b/bin/res/drawable-hdpi/off_03.png
+new file mode 100644
+index 0000000..69bcf80
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_03.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_04.png b/bin/res/drawable-hdpi/off_04.png
+new file mode 100644
+index 0000000..26dcb16
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_04.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_05.png b/bin/res/drawable-hdpi/off_05.png
+new file mode 100644
+index 0000000..865b028
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_05.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_06.png b/bin/res/drawable-hdpi/off_06.png
+new file mode 100644
+index 0000000..03c3390
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_06.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/off_07.png b/bin/res/drawable-hdpi/off_07.png
+new file mode 100644
+index 0000000..e2b0003
+--- /dev/null
++++ b/bin/res/drawable-hdpi/off_07.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_01.png b/bin/res/drawable-hdpi/on_01.png
+new file mode 100644
+index 0000000..251da4b
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_01.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_02.png b/bin/res/drawable-hdpi/on_02.png
+new file mode 100644
+index 0000000..6d2d226
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_02.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_03.png b/bin/res/drawable-hdpi/on_03.png
+new file mode 100644
+index 0000000..f257228
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_03.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_04.png b/bin/res/drawable-hdpi/on_04.png
+new file mode 100644
+index 0000000..b67fbd4
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_04.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_05.png b/bin/res/drawable-hdpi/on_05.png
+new file mode 100644
+index 0000000..ef70227
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_05.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_06.png b/bin/res/drawable-hdpi/on_06.png
+new file mode 100644
+index 0000000..8df2433
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_06.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/on_07.png b/bin/res/drawable-hdpi/on_07.png
+new file mode 100644
+index 0000000..63775bc
+--- /dev/null
++++ b/bin/res/drawable-hdpi/on_07.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/r_quotation.png b/bin/res/drawable-hdpi/r_quotation.png
+new file mode 100644
+index 0000000..c52b902
+--- /dev/null
++++ b/bin/res/drawable-hdpi/r_quotation.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_ack_button.png b/bin/res/drawable-hdpi/settings_ack_button.png
+new file mode 100644
+index 0000000..1860d92
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_ack_button.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_button.png b/bin/res/drawable-hdpi/settings_button.png
+new file mode 100644
+index 0000000..e05ecee
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_button.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_edittext.png b/bin/res/drawable-hdpi/settings_edittext.png
+new file mode 100644
+index 0000000..9def70a
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_edittext.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_sep.png b/bin/res/drawable-hdpi/settings_sep.png
+new file mode 100644
+index 0000000..b268ffe
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_sep.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_sep3.png b/bin/res/drawable-hdpi/settings_sep3.png
+new file mode 100644
+index 0000000..b268ffe
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_sep3.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/settings_word.png b/bin/res/drawable-hdpi/settings_word.png
+new file mode 100644
+index 0000000..b4c2ecf
+--- /dev/null
++++ b/bin/res/drawable-hdpi/settings_word.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/site.png b/bin/res/drawable-hdpi/site.png
+new file mode 100644
+index 0000000..f998ed0
+--- /dev/null
++++ b/bin/res/drawable-hdpi/site.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/submitactivity.png b/bin/res/drawable-hdpi/submitactivity.png
+new file mode 100644
+index 0000000..f9de2b8
+--- /dev/null
++++ b/bin/res/drawable-hdpi/submitactivity.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/tab_unread_bg.9.png b/bin/res/drawable-hdpi/tab_unread_bg.9.png
+new file mode 100644
+index 0000000..3b842f8
+--- /dev/null
++++ b/bin/res/drawable-hdpi/tab_unread_bg.9.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/time.png b/bin/res/drawable-hdpi/time.png
+new file mode 100644
+index 0000000..2c09b25
+--- /dev/null
++++ b/bin/res/drawable-hdpi/time.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/tomenu.png b/bin/res/drawable-hdpi/tomenu.png
+new file mode 100644
+index 0000000..2d0f29f
+--- /dev/null
++++ b/bin/res/drawable-hdpi/tomenu.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/z_arrow_down.png b/bin/res/drawable-hdpi/z_arrow_down.png
+new file mode 100644
+index 0000000..532b291
+--- /dev/null
++++ b/bin/res/drawable-hdpi/z_arrow_down.png
+Binary files differ
+diff --git a/bin/res/drawable-hdpi/z_arrow_up.png b/bin/res/drawable-hdpi/z_arrow_up.png
+new file mode 100644
+index 0000000..487b78e
+--- /dev/null
++++ b/bin/res/drawable-hdpi/z_arrow_up.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/add.png b/bin/res/drawable-mdpi/add.png
+new file mode 100644
+index 0000000..83ffa32
+--- /dev/null
++++ b/bin/res/drawable-mdpi/add.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/add_2.png b/bin/res/drawable-mdpi/add_2.png
+new file mode 100644
+index 0000000..6ba66dd
+--- /dev/null
++++ b/bin/res/drawable-mdpi/add_2.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/co_add.png b/bin/res/drawable-mdpi/co_add.png
+new file mode 100644
+index 0000000..02534c8
+--- /dev/null
++++ b/bin/res/drawable-mdpi/co_add.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/co_sep.png b/bin/res/drawable-mdpi/co_sep.png
+new file mode 100644
+index 0000000..a4111a4
+--- /dev/null
++++ b/bin/res/drawable-mdpi/co_sep.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/comment.9.png b/bin/res/drawable-mdpi/comment.9.png
+new file mode 100644
+index 0000000..b785a98
+--- /dev/null
++++ b/bin/res/drawable-mdpi/comment.9.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/ic_launcher.png b/bin/res/drawable-mdpi/ic_launcher.png
+new file mode 100644
+index 0000000..ec27f2e
+--- /dev/null
++++ b/bin/res/drawable-mdpi/ic_launcher.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/like.png b/bin/res/drawable-mdpi/like.png
+new file mode 100644
+index 0000000..1c4ff77
+--- /dev/null
++++ b/bin/res/drawable-mdpi/like.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/liked.png b/bin/res/drawable-mdpi/liked.png
+new file mode 100644
+index 0000000..ecb7046
+--- /dev/null
++++ b/bin/res/drawable-mdpi/liked.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/photo_03.png b/bin/res/drawable-mdpi/photo_03.png
+new file mode 100644
+index 0000000..ea9f215
+--- /dev/null
++++ b/bin/res/drawable-mdpi/photo_03.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/photo_06.png b/bin/res/drawable-mdpi/photo_06.png
+new file mode 100644
+index 0000000..1d53859
+--- /dev/null
++++ b/bin/res/drawable-mdpi/photo_06.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/photo_08.png b/bin/res/drawable-mdpi/photo_08.png
+new file mode 100644
+index 0000000..05b3bef
+--- /dev/null
++++ b/bin/res/drawable-mdpi/photo_08.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/post_10.png b/bin/res/drawable-mdpi/post_10.png
+new file mode 100644
+index 0000000..f3fc370
+--- /dev/null
++++ b/bin/res/drawable-mdpi/post_10.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/re.png b/bin/res/drawable-mdpi/re.png
+new file mode 100644
+index 0000000..d78c5c2
+--- /dev/null
++++ b/bin/res/drawable-mdpi/re.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/re_sep.png b/bin/res/drawable-mdpi/re_sep.png
+new file mode 100644
+index 0000000..a8ec65a
+--- /dev/null
++++ b/bin/res/drawable-mdpi/re_sep.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/reply.png b/bin/res/drawable-mdpi/reply.png
+new file mode 100644
+index 0000000..00d51ef
+--- /dev/null
++++ b/bin/res/drawable-mdpi/reply.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/reply9.9.png b/bin/res/drawable-mdpi/reply9.9.png
+new file mode 100644
+index 0000000..433db8c
+--- /dev/null
++++ b/bin/res/drawable-mdpi/reply9.9.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/search.png b/bin/res/drawable-mdpi/search.png
+new file mode 100644
+index 0000000..5d2eb33
+--- /dev/null
++++ b/bin/res/drawable-mdpi/search.png
+Binary files differ
+diff --git a/bin/res/drawable-mdpi/side.png b/bin/res/drawable-mdpi/side.png
+new file mode 100644
+index 0000000..254769f
+--- /dev/null
++++ b/bin/res/drawable-mdpi/side.png
+Binary files differ
+diff --git a/bin/res/drawable-xhdpi/ic_launcher.png b/bin/res/drawable-xhdpi/ic_launcher.png
+new file mode 100644
+index 0000000..92fc57d
+--- /dev/null
++++ b/bin/res/drawable-xhdpi/ic_launcher.png
+Binary files differ
+diff --git a/bin/res/drawable-xxhdpi/ic_launcher.png b/bin/res/drawable-xxhdpi/ic_launcher.png
+new file mode 100644
+index 0000000..b6f8f4e
+--- /dev/null
++++ b/bin/res/drawable-xxhdpi/ic_launcher.png
+Binary files differ
+diff --git a/bin/resources.ap_ b/bin/resources.ap_
+new file mode 100644
+index 0000000..66a6761
+--- /dev/null
++++ b/bin/resources.ap_
+Binary files differ
