@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+        
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+            <ImageView 
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/friend_list_item_avatar"
+            android:src="@drawable/defaultavatar"
+            />
+
+            <TextView
+                android:id="@+id/friend_list_item_fname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" 
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"/>
+
+            
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/friend_list_item_deleteBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="20dp"
+            android:text="delete" />
+
+    </RelativeLayout>
+
+</LinearLayout>

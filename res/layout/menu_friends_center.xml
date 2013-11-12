@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menu_friend_center_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#3ecc9d"
+	    android:paddingRight="5dp" >
+
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="7dip">
+	        <Button
+		        android:id="@+id/friendCenter_to_memu"
+		        android:layout_width="40dip"
+		        android:layout_height="30dip"			  
+		        android:background="@drawable/tomenu"
+		        android:textColor="#000000" />
+	    </LinearLayout>
+	    
+
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:padding="5dip">
+
+		     <Button
+		        android:id="@+id/friendCenter_addFriendBtn"
+		        android:layout_width="40dip"
+		        android:layout_height="40dip"
+		        android:background="@drawable/buttons"
+		        android:gravity="center_vertical"/>
+		    </LinearLayout>
+
+	</RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_friend_center_searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@drawable/side" />
+
+        <EditText
+            android:id="@+id/menu_friend_center_searchmyfriend"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="7000"
+            android:focusable="false"
+            android:focusableInTouchMode="false">
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/menu_friend_center_searchmyfriendBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/search" />
+
+        
+    </LinearLayout>
+
+
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp" >
+
+        <LinearLayout
+            android:id="@+id/menu_friend_center_functions"
+            android:layout_marginTop="10dip"
+            android:layout_marginBottom="10dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            
+            <LinearLayout 
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:background="#ffffff"
+                android:gravity="top|right"
+                >          
+                <TextView         
+                    android:id="@+id/notifyNumber"            
+                    android:layout_margin="2dip"           
+					android:textSize="10.0dip" 
+					android:textColor="@android:color/white" 
+					android:gravity="center" 
+					android:background="@drawable/tab_unread_bg" 
+					android:layout_width="wrap_content" 
+					android:layout_height="wrap_content" 
+					android:text=""
+					android:visibility="gone" />
+            </LinearLayout>
+            
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消息中心" 
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"/>           
+        </LinearLayout>
+   		
+        <ListView
+            android:id="@+id/menu_friend_center_friendlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_below="@id/menu_friend_center_functions">
+        </ListView>
+        
+        <com.app.customwidget.LetterSidebar
+            android:id="@+id/lettersidebar" 
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

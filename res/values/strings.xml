@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+      <string name="app_name">Catherine</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="signuphint">&lt;&lt;sign up</string>
+	<string name="loginhint">Login&gt;&gt;</string>
+	<string name="addActivity">发起活动</string>
+    <string name="activityTheme">活动主题</string>
+    <string name="activityThemeHint">请输入活动主题</string>
+    <string name="activityTime">活动时间:</string>
+    <string name="activityLocation">活动地点:</string>
+    <string name="activityParticipant">活动参与者:</string>
+    <string name="activityDuration">请输入活动持续时长/天</string>
+    <string name="activityVisibility">活动是否公开</string>
+    <string name="activityremarks">可添加备注</string>
+    <string name="addActivityTime">添加活动时间</string>
+    <string name="addActivityLocation">添加活动地点</string>
+    <string name="addActivityParticipant">添加参与活动的好友</string>
+    <string name="submitActivityBtn">提交活动</string>
+    <string name="modify">修改</string>
+    <string name="ack">确定</string>
+    <string name="individual_info">个人信息</string>
+    <string name="account_info">账户信息</string>
+    <string name="gender">性别:</string>
+    <string name="location">地点:</string>
+    <string name="description">个人描述:</string>
+    <string name="email">邮箱地址:</string>
+    <string name="bind_account">社交账号绑定:</string>
+    <string name="camera">拍照</string>
+    <string name="album">相册</string>
+    <string name="activitytime">&#160;&#160;时&#160;&#160;&#160;&#160;间&#160;&#160; </string>
+    <string name="activityLoc">&#160;&#160;地&#160;&#160;&#160;&#160;点&#160;&#160; </string>
+    <string name="cancel">取消</string>
+    <string name="modify_pw">修改密码&gt;&gt;</string>
+    <string name="nick_name">昵称:</string>
+    <string name="myName_hint">请填写昵称</string>
+    <string name="location_hint">请设置地点</string>
+    <string name="description_hint">请填写个人描述</string>
+    <string name="defaultString"></string>
+    <string name="backupHint">活动内容描述...</string>
+    <string name="change_pw">修改密码</string>
+    <string name="current_pw">当前密码</string>
+    <string name="new_pw">新密码</string>
+    <string name="ack_pw">确认密码</string>
+    <string name="submit">提交</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="pass">同意</string>
+    <string name="refuse">拒绝</string>
+    <string name="request_for_friend">请求加你为好友</string>
+    <string name="pass_friend_request">同意添加你为好友</string>
+    <string name="refuse_friend_request">拒绝添加你为好友</string>
+    <string name="delete">删除</string>
+    <string name="pass_event_request">同意你加入活动</string>
+    <string name="refuse_event_request">拒绝你加入活动</string>
+    <string name="pass_event_invitation">同意加入你的活动</string>
+    <string name="refuse_event_invitation">拒绝加入你的活动</string>
+    <string name="request_for_event">申请加入活动</string>
+    <string name="already_friends">你们已经是好友</string>
+    <string name="already_in_event">你已经在该活动中</string>
+    <string name="request_event_invitation">邀请你加入活动</string>
+    <string name="add_friend_button">加为好友</string>
+    <string name="search_friend_hint">请输入邮箱或用户名搜索</string>
+
+</resources>

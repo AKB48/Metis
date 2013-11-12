@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+            
+	<Button
+		 android:id="@+id/viewFriendBtn"
+		 android:layout_width="fill_parent"
+		 android:layout_height="wrap_content"
+		 android:text="选择要添加的好友" />
+	
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" 
+        
+        >   	
+
+        <TextView
+            android:id="@+id/moreparticipantList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/submitMoreParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="确定" 
+            android:visibility="gone"
+            />
+        
+    </LinearLayout>
+
+	  
+</LinearLayout>

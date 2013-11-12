@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#3ecc9d"
+	    android:paddingRight="5dp" >
+
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="7dip">
+	        <Button
+		        android:id="@+id/to_memu"
+		        android:layout_width="40dip"
+		        android:layout_height="30dip"			  
+		        android:background="@drawable/tomenu"
+		        android:textColor="#000000" />
+	    </LinearLayout>
+	    
+
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:padding="5dip">
+		    <Button
+		        android:id="@+id/ui_addActivityBtn"
+		        android:layout_width="40dip"
+		        android:layout_height="40dip"
+		        android:gravity="center_vertical"
+		        android:background="@drawable/newactivitybtn"
+		        android:textColor="#00ffff" />
+		    </LinearLayout>
+
+	</RelativeLayout>
+			
+    <com.app.customwidget.PullUpDownView
+        android:id="@+id/my_events_pull_up_down_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" >
+	    
+	</com.app.customwidget.PullUpDownView>
+    
+
+</LinearLayout>

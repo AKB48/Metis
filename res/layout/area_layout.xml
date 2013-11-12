@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:background="@drawable/layout_bg"
+	android:layout_width="match_parent" 
+	android:gravity="center_horizontal"
+	android:id="@+id/area_layout">
+
+    <LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_width="match_parent"
+		android:paddingLeft="8dp"
+		android:paddingRight="8dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:orientation="horizontal" 
+		android:gravity="center_horizontal">
+	
+		   <com.app.customwidget.WheelView 
+		       android:id="@+id/state"
+		        android:layout_height="wrap_content"
+		        android:layout_width="60dp"
+		        android:layout_gravity="center_vertical"
+		        />
+			
+			<com.app.customwidget.WheelView 
+			    android:id="@+id/city"
+				android:layout_height="wrap_content"
+				android:layout_width="80dp"
+				android:layout_marginLeft="10dp"
+				/>
+		    <com.app.customwidget.WheelView 
+		        android:id="@+id/area"
+		        android:layout_height="wrap_content"
+		        android:layout_width="110dp"
+		        android:layout_marginLeft="10dp"
+		            />
+	</LinearLayout>
+
+</LinearLayout>

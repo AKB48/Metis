@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#edebe4"
+    android:orientation="vertical">
+        <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:background="#3ecc9d">
+	        
+            <TextView 
+                android:id="@+id/hintTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"
+                android:textColor="#804000"
+                android:text="loading images..."/>
+
+	        <ImageView 
+	            android:id="@+id/addPhoto"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:padding="5dip"	        
+	            android:src="@drawable/activity_right_photo_white"	            
+	            />
+	    </RelativeLayout>
+
+		<ScrollView 
+		    android:id="@+id/photoWallScrollView"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dip"
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginRight="5dip"
+		    android:scrollbars="none">
+		        
+		    <RelativeLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+		        		
+		         <LinearLayout 
+		            android:id="@+id/leftView"
+			        android:layout_alignParentLeft="true"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical">
+			          
+			    </LinearLayout>
+			    
+			   <LinearLayout 
+			       android:id="@+id/rightView"
+			        android:layout_alignParentRight="true"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical">
+
+			    </LinearLayout>
+			    
+			   <LinearLayout 
+			       android:id="@+id/buttomHint"
+			       android:layout_width="fill_parent"
+			       android:layout_height="wrap_content"
+			       android:background="#e0ffff"
+			       android:layout_alignParentBottom="true"
+			       android:gravity="center"
+			       android:visibility="gone">
+			       <TextView 
+			           android:layout_width="wrap_content"
+			           android:layout_height="wrap_content"
+			           android:padding="5dip"
+			           android:text="loading..."/>
+				   </LinearLayout>
+		    </RelativeLayout>
+		   
+		
+		</ScrollView>
+
+</LinearLayout>

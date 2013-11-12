@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/searchFriend"
+    android:orientation="vertical" 
+    android:background="@color/gray">"
+    
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="5dp">
+        
+    <Button
+        android:id="@+id/search_friend_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/search"
+        android:layout_alignParentRight="true"/>
+    
+     <EditText
+        android:id="@+id/search_friend_content"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@id/search_friend_button"/>
+    
+    </RelativeLayout>
+    
+   <TextView
+       android:id="@+id/search_friend_hint"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text=""
+       android:textColor="#111111"
+       android:textSize="15sp"
+       android:paddingLeft="5dp"
+       android:paddingTop="5dp"/>
+    
+   <ListView 
+       android:id="@+id/search_friend_list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:paddingTop="5dp"/>
+   
+</LinearLayout>
