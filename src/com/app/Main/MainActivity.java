@@ -107,6 +107,8 @@ public class MainActivity extends Activity {
 			UI_friendCenter.init();                                   //同步好友列表
 		}
 		
+		initContentView2();
+		
 		init();
 	}
 	
@@ -183,9 +185,17 @@ public class MainActivity extends Activity {
 				mSlidingMenu.setContent( UI_relativeEvents.getView() );
 				break;
 				
+			case CLICK_ON_RECOMMAND_EVENTS:
+				mSlidingMenu.setContent( mContentView2 );
+				break;
+				
 			case CLICK_ON_NOTIFY_CENTER:
 				mSlidingMenu.setContent( UI_friendCenter.getView() );
 				UI_friendCenter.showFriendList();
+				break;
+				
+			case CLICK_ON_UPDATE:
+				mSlidingMenu.setContent( mContentView2 );
 				break;
 				
 			case CLICK_ON_SETTING:
