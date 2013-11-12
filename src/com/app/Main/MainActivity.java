@@ -35,6 +35,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 	private SlidingMenu mSlidingMenu;
 	
+	//
 	private MenuSide mMenuSide;
 	private MenuSideHandler mMenuSideHandler;
 	
